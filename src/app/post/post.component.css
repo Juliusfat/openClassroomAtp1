@@ -1,0 +1,11 @@
+.post{
+    justify-content: space-between; 
+}
+
+.fond{
+    margin : 5px 0 5px 0;
+}
+
+button{
+    margin : 5px 5px 0 5px;
+}
