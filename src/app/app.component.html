@@ -1,14 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Bienvenue dans La liste des Posts!
-  </h1>
-  <div class="container">
-    
-        <h2>les Posts du jour</h2>
-            
-        <app-post *ngFor="let post of myPost" [post]="post"></app-post>         
-        
-  </div>
+<app-header></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../post';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -9,8 +10,9 @@ import { Post } from '../post';
 export class PostComponent implements OnInit {
 
   @Input () post : Post;
+  @Input () index : number;
 
-  constructor() { }
+  constructor(private postService : PostService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ export class PostComponent implements OnInit {
 
   onLove( avis : number){
     this.post.loveIts+=avis;
-
+    this.postService.onEditPost(this.index, this.post);
   }
 
   /**
@@ -35,6 +37,10 @@ export class PostComponent implements OnInit {
     } else if(this.post.loveIts > 0){
       return "#C4F3A8";
     } else { return "white";}
+  }
+
+  onDelete(){
+    this.postService.deletePost(this.index);
   }
 
 }
